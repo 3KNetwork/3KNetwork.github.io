@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111619">
+  <meta name="description" content="Kenan Kaan Kurt tarafından geliştirilen Underground Mafia mobil oyununun resmi geliştirici ve destek sayfası.">
+  <title>Underground Mafia — Kenan Kaan Kurt</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111619'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='bold' fill='%23d7b881'%3EM%3C/text%3E%3C/svg%3E">
+  <style>
+    :root { color-scheme: dark; --ink: #111619; --paper: #f0eee6; --gold: #d7b881; --muted: #a6adae; --line: #354044; }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; }
+    body { margin: 0; background: var(--ink); color: var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    a { color: inherit; text-underline-offset: .25em; }
+    a:focus-visible, select:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+    ::selection { background: var(--gold); color: var(--ink); }
+    .page { max-width: 1360px; min-height: 100svh; padding: 0 64px; margin: auto; display: flex; flex-direction: column; }
+    .masthead { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 14px; direction: ltr; }
+    .brand-mark { width: 44px; height: 44px; border: 1px solid var(--gold); display: grid; place-items: center; color: var(--gold); font-family: Georgia, serif; font-size: 23px; font-weight: 700; }
+    .brand-name { font-size: 14px; font-weight: 600; letter-spacing: .18em; }
+    .nav-link { font-size: 14px; text-decoration: none; color: var(--muted); padding: 12px 0; }
+    .nav-link:hover { color: var(--gold); }
+    .header-actions { display: flex; align-items: center; gap: 30px; }
+    .language-picker { display: flex; align-items: center; gap: 9px; color: var(--gold); padding: 0 11px; border: 1px solid var(--line); direction: ltr; }
+    .language-picker[hidden] { display: none; }
+    .language-picker svg { flex: 0 0 17px; }
+    .language-picker select { min-height: 42px; max-width: 120px; border: 0; background: var(--ink); color: var(--paper); font: inherit; font-size: 14px; cursor: pointer; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    main { flex: 1; padding: 88px 0 76px; }
+    .eyebrow { margin: 0 0 32px; color: var(--gold); font-size: 13px; font-weight: 500; letter-spacing: .19em; text-transform: uppercase; display: flex; align-items: center; gap: 16px; }
+    .eyebrow::before { content: ""; width: 36px; height: 1px; background: var(--gold); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(240px, 1fr); align-items: end; gap: 54px; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(64px, 7.1vw, 96px); font-weight: 400; line-height: 1.01; letter-spacing: -.055em; }
+    h1 span { display: block; }
+    h1 .second { color: var(--gold); font-style: italic; margin-top: 8px; }
+    .intro { border-top: 1px solid var(--gold); padding-top: 26px; padding-bottom: 6px; }
+    .intro p { font-size: 17px; line-height: 1.8; color: var(--muted); margin: 0; }
+    .intro .tagline { color: var(--paper); font-size: 22px; line-height: 1.45; margin-bottom: 18px; }
+    .support { margin-top: 80px; padding: 30px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
+    .support h2 { font-size: 16px; font-weight: 500; margin: 0 0 9px; }
+    .support p { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0; }
+    .contact { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 52px; padding: 15px 20px; border: 1px solid var(--line); font-size: 15px; text-decoration: none; transition: background .18s, border-color .18s; }
+    .contact:hover { background: #1b2327; border-color: var(--gold); }
+    .contact svg { flex: 0 0 18px; color: var(--gold); }
+    footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 25px 0 30px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+    footer p { margin: 0; line-height: 1.7; }
+    footer a { color: var(--muted); text-decoration: none; padding: 8px 0; }
+    footer a:hover { color: var(--gold); }
+    html[dir="rtl"] h1 { text-align: right; }
+    html[lang="ar"] .eyebrow { letter-spacing: 0; font-size: 15px; }
+    html[lang="ar"] .intro p { line-height: 1.9; }
+    @media (min-width: 1500px) { main { padding-top: 112px; } }
+    @media (max-width: 1000px) { .page { padding: 0 40px; } .hero { gap: 36px; grid-template-columns: 1.5fr 1fr; } h1 { font-size: clamp(58px, 7.1vw, 84px); } .support { grid-template-columns: 1fr; gap: 22px; } .contact { justify-self: start; } }
+    @media (max-width: 700px) {
+      .page { padding: 0 24px; }
+      .masthead { min-height: 90px; gap: 14px; flex-wrap: wrap; padding: 20px 0; }
+      .brand { gap: 11px; }
+      .brand-name { font-size: 12px; letter-spacing: .1em; max-width: 110px; line-height: 1.65; }
+      .brand-mark { width: 38px; height: 38px; font-size: 21px; }
+      .header-actions { gap: 0; }
+      .nav-link { display: none; }
+      .language-picker { padding: 0 7px; gap: 6px; }
+      .language-picker select { max-width: 84px; }
+      main { padding: 54px 0 46px; }
+      .eyebrow { font-size: 12px; letter-spacing: .14em; margin-bottom: 28px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; }
+      h1 { font-size: clamp(47px, 11.8vw, 78px); }
+      .intro { padding-top: 24px; max-width: 460px; }
+      .intro .tagline { font-size: 21px; margin-bottom: 13px; }
+      .intro p { font-size: 16px; }
+      .support { margin-top: 44px; gap: 22px; }
+      .contact { font-size: 14px; gap: 12px; padding: 14px; max-width: 100%; }
+      .contact span { overflow-wrap: anywhere; }
+      footer { align-items: flex-start; font-size: 12px; gap: 16px; }
+      footer a { white-space: nowrap; padding-top: 2px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="brand" aria-label="Kenan Kaan Kurt">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-name">KENAN KAAN KURT</span>
+      </div>
+      <div class="header-actions">
+        <a class="nav-link" data-i18n="contact" href="mailto:supportundergroundmafia@gmail.com">İletişim</a>
+        <div class="language-picker" hidden>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+          <label class="sr-only" for="language" data-i18n="languageLabel">Dil</label>
+          <select id="language" name="language">
+            <option value="tr" lang="tr">Türkçe</option>
+            <option value="en" lang="en">English</option>
+            <option value="ar" lang="ar">العربية</option>
+            <option value="de" lang="de">Deutsch</option>
+            <option value="es" lang="es">Español</option>
+            <option value="ru" lang="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <main>
+      <p class="eyebrow" data-i18n="eyebrow">Mobil oyun · Kenan Kaan Kurt</p>
+      <div class="hero">
+        <h1 dir="ltr"><span>Underground</span><span class="second">Mafia</span></h1>
+        <div class="intro">
+          <p class="tagline" data-i18n="tagline">Şehirde kendi hikâyeni yaz.</p>
+          <p data-i18n="intro">Görevleri tamamla, karakterini geliştir ve çetenle yeraltı dünyasında yüksel. Underground Mafia, Kenan Kaan Kurt tarafından geliştirilen bir mobil oyundur.</p>
+        </div>
+      </div>
+      <section class="support" aria-labelledby="support-title">
+        <div>
+          <h2 id="support-title" data-i18n="supportTitle">Oyuncu desteği</h2>
+          <p data-i18n="supportText">Soruların ve oyunla ilgili geri bildirimlerin için bize ulaş.</p>
+        </div>
+        <a class="contact" dir="ltr" href="mailto:supportundergroundmafia@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          <span>supportundergroundmafia@gmail.com</span>
+        </a>
+      </section>
+    </main>
+    <footer>
+      <p><bdi>© 2026 Kenan Kaan Kurt</bdi><br><bdi>Underground Mafia</bdi></p>
+      <a href="./app-ads.txt" lang="en" dir="ltr">app-ads.txt</a>
+    </footer>
+  </div>
+  <script src="./site.js" defer></script>
+</body>
+</html>
